@@ -209,3 +209,17 @@ body {
 
 /* Cuenta Regresiva */
 
+.formCountDown {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.startCountDown,
+.stopCountDown {
+    cursor: pointer;
+}
+.countDown {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}

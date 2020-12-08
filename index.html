@@ -39,7 +39,12 @@
         </section>
         <section class="section" id="section-3">
             <h2 class="section__title">Cuenta Regresiva</h2>
-            <div class="countDown"></div>
+            <div class="formCountDown" id="formCountDown">
+                <input type="datetime-local" name="datetime-local" id="limitDateTime">
+                <button type="button" class="startCountDown">Iniciar Cuenta Regresiva</button>
+                <button type="button" class="stopCountDown" disabled>Detener Cuenta Regresiva</button>
+            </div>
+            <div class="countDown" id="countDown">Faltan - - - días - - horas - - minutos - - segundos</div>
         </section>
         <section class="section" id="section-4">
             <h2 class="section__title">Sección 4</h2>
