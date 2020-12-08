@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Ejercicios del DOM</h1>
+    </header>
+    <nav class="nav">
+        <ul class="menulist">
+            <li class="menulist__item"><a href="#section-1" class="menulist__link">Reloj y Alarma</a></li>
+            <li class="menulist__item"><a href="#section-2" class="menulist__link">Eventos del teclado</a></li>
+            <li class="menulist__item"><a href="#section-3" class="menulist__link">Cuenta Regresiva</a></li>
+            <li class="menulist__item"><a href="#section-4" class="menulist__link">Sección 4</a></li>
+            <li class="menulist__item"><a href="#section-5" class="menulist__link">Sección 5</a></li>
+        </ul>
+    </nav>
+    <button class="button-toggle"><span class="toggle-line"></span></button>
+    <main class="main">
+        <section class="section" id="section-1">
+            <h2 class="section__title">Reloj y de alarma</h2>
+            <time class="time" id="time"></time>
+            <div class="controls-clock">
+                <button class="button-clock" id="startClock">Iniciar Reloj</button>
+                <button class="button-clock" id="pauseClock">Detener Reloj</button>
+                <button class="button-clock" id="startAlarm">Iniciar Alarma</button>
+                <button class="button-clock" id="pauseAlarm">Detener Alarma</button>
+            </div>
+        </section>
+        <section class="section" id="section-2">
+            <h2 class="section__title">Eventos del teclado</h2>
+            <div class="container-box" id="container-box">
+                <div class="ball" id="ball"></div>
+            </div>
+        </section>
+        <section class="section" id="section-3">
+            <h2 class="section__title">Cuenta Regresiva</h2>
+            <div class="countDown"></div>
+        </section>
+        <section class="section" id="section-4">
+            <h2 class="section__title">Sección 4</h2>
+        </section>
+        <section class="section" id="section-5">
+            <h2 class="section__title">Sección 5</h2>
+        </section>
+    </main>
+    <script src="js/index.js" type="module"></script>
+</body>
+</html>

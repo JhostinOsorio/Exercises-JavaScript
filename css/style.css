@@ -1,0 +1,211 @@
+/* ========================= RESET CSS ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root {
+    --header-height: 5rem;
+    --main-color: yellow;
+    --color-darken: #333;
+    --main-color-alpha: rgba(255, 255, 0, .5);
+    --color-darken-alpha: rgba(51, 51, 51, .5);
+    --toggle-size: 80px;
+    --toggle-line-width: 70%;
+    --toggle-line-height: calc(var(--toggle-size) / 10);
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+    height: var(--header-height);
+    width: 100%;
+    z-index: 10;
+}
+.header__title {
+    margin: 0;
+}
+
+/* NAV */
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-darken-alpha);
+    transform: translateX(-150%);
+    opacity: 0;
+    transition: transform .3s ease-out, opacity .3s ease-out;
+    z-index: 100;
+}
+.nav--show {
+    transform: translateX(0);
+    opacity: 1;
+}
+.menulist {
+    flex: 1;
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.menulist__link {
+    display: block;
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: .75em .5em;
+    transition: background-color .1s ease-out;
+}
+.menulist__link:hover {
+    background-color: var(--color-darken);
+}
+
+/* TOGGLE */
+
+.button-toggle {
+    position: fixed;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    border: none;
+    border-radius: 50%;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--main-color);
+    cursor: pointer;
+    transition: transform .3s ease-out;
+    z-index: 1000;
+}
+.button-toggle::before,
+.button-toggle::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: var(--toggle-line-width);
+    height: var(--toggle-line-height);
+    background-color: var(--color-darken);
+}
+.toggle-line {
+    position: absolute;
+    display: block;
+    width: var(--toggle-line-width);
+    height: var(--toggle-line-height);
+    background-color: var(--color-darken);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform .1s ease-out;
+}
+.button-toggle::before,
+.button-toggle::after,
+.toggle-line {
+    left: 15%;
+    border-radius: .5em;
+}
+.button-toggle::before {
+    top: 30%;
+    transform: translateY(-50%);
+    transition: top .3s ease-out, transform .3s ease-out;
+}
+.button-toggle::after {
+    bottom: 30%;
+    transform: translateY(50%);
+    transition: bottom .3s ease-out, transform .3s ease-out;
+}
+
+.button-toggle--active {
+    transform: rotate(360deg);
+}
+.button-toggle--active::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(405deg);
+}
+.button-toggle--active::after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(495deg);
+}
+.button-toggle--active .toggle-line {
+    transform: translateY(-50%) scaleX(0);
+}
+
+/* MAIN */
+
+.main {
+    margin-top: var(--header-height);
+}
+.section {
+    height: calc(100vh - var(--header-height));
+    padding: 1em;
+}
+.section__title {
+    margin: 1em;
+    text-align: center;
+}
+
+/* RELOJ Y ALARMA */
+
+.time {
+    display: none;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.time--show {
+    display: block;
+}
+.controls-clock {
+    text-align: center;
+    margin-top: 1em;
+}
+.button-clock{
+    cursor: pointer;
+    padding: .25em .5em;
+}
+
+/* EVENTOS DEL TECLADO */
+
+.container-box {
+    --size-ball: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    width: 90%;
+    height: 78%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--color-darken);
+}
+
+.ball {
+    width: var(--size-ball);
+    height: var(--size-ball);
+    background-color: var(--main-color);
+    border-radius: 50%;
+}
+
+/* Cuenta Regresiva */
+
