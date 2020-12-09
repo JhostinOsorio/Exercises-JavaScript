@@ -3,7 +3,7 @@ let x = 0, y = 0
 
 const moveBall = (e, box, ball) => {
     
-    const interval = 15;
+    const interval = 10;
     const $box = d.querySelector(box),
     $ball = d.querySelector(ball),
     topBox = $box.getBoundingClientRect().top,

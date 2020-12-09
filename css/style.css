@@ -38,6 +38,7 @@ body {
     width: 100%;
     z-index: 10;
 }
+
 .header__title {
     margin: 0;
 }
@@ -177,12 +178,17 @@ body {
     display: block;
 }
 .controls-clock {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 1em;
 }
 .button-clock{
+    margin: .5em 1em;
+    font-size: 1rem;
+    display: block;
     cursor: pointer;
-    padding: .25em .5em;
+    padding: .5em .5em;
 }
 
 /* EVENTOS DEL TECLADO */
@@ -210,16 +216,81 @@ body {
 /* Cuenta Regresiva */
 
 .formCountDown {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
+.limitDateTime {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .5em;
+}
 .startCountDown,
 .stopCountDown {
+    margin: .5em 1em;
+    font-size: 1rem;
+    display: block;
     cursor: pointer;
+    padding: .5em .5em;
 }
 .countDown {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+/* Botón Subir */
+
+.button-to-top {
+    position: fixed;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    border: none;
+    border-radius: 50%;
+    bottom: 2rem;
+    right: calc(2.5rem + var(--toggle-size));
+    background-color: var(--main-color);
+    cursor: pointer;
+    transition: transform .3s ease-out;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-out;
+}
+.button-to-top--show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.button-to-top::before,
+.button-to-top::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 40%;
+    height: var(--toggle-line-height);
+    background-color: var(--color-darken);
+    border-radius: .5em;
+    top: 50%;
+    left: 30%;
+}
+.button-to-top::before {
+    left: 19%;
+    transform: translateY(-50%) rotate(135deg);
+}
+.button-to-top::after {
+    left: 41%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --header-height: 4rem;
+        --toggle-size: 70px;
+    }
+    .container-box {
+        --size-ball: 70px;
+    }
 }
