@@ -1,7 +1,7 @@
-# EXERCISES JavaScript
+# Ejercicios JavaScript
 
-# Botón toggle animable (1)
-# Reloj y Alarma (2)
-# Eventos del Teclado (3)
-# Cuenta Regresiva (4)
-# Botón toTop animable (5)
+* Botón toggle animable
+* Reloj y Alarma
+* Eventos del Teclado
+* Cuenta Regresiva
+* Botón toTop animable
